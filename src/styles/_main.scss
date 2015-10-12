@@ -1,0 +1,23 @@
+/**
+ * index component
+ * Author : iceStone <ice@wedn.net>
+ * Created : 2015-08-31 14:42:55
+ * Modified : 2015-08-31 14:43:14
+ * Copyright © 2015 Micua.com. All Rights Reserved.
+ */
+
+
+ // main style
+ main {
+     min-height: 100%;
+     height: 300%;
+     width: 100%;
+
+     & > .cover-section {
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         height: 33.3333333%;
+         width: 100%;
+     }
+ }
