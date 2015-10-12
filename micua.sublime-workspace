@@ -68,12 +68,11 @@
 	},
 	"expanded_folders":
 	[
-		"/E/Code/Front-End/micua",
-		"/E/Code/Front-End/micua/src",
-		"/E/Code/Front-End/micua/src/styles"
+		"/E/Code/Front-End/micua"
 	],
 	"file_history":
 	[
+		"/E/Code/Front-End/micua/node_modules/gulp-gh-pages/index.js",
 		"/E/Code/Front-End/micua/.gitignore",
 		"/E/Code/Front-End/micua/.git/config",
 		"/E/Code/Front-End/micua/src/404.html",
@@ -263,7 +262,7 @@
 			1.0
 		]
 	},
-	"menu_visible": false,
+	"menu_visible": true,
 	"output.find_results":
 	{
 		"height": 0.0
