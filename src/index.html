@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" manifest="main.manifest">
+<html class="no-js" lang="zh-Hans">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- input your page title -->
   <title>Micua</title>
   <!-- input your page description -->
@@ -17,11 +17,10 @@
   <!-- make sure favicon.ico in the root directory -->
   <link rel="shortcut icon" href="favicon.ico">
   <!-- for apple devices -->
-  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
   <!-- endbower -->
-  <link rel="stylesheet" href="styles/vendor.css">
   <!-- include vendor stylesheets -->
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
@@ -44,35 +43,65 @@
     </div>
     <![endif]-->
   <header>
-    <nav class="navbar navbar-light navbar-fixed-top navbar-sizeable bg-write">
+    <nav class="navbar navbar-micua">
       <div class="container">
-        <a class="navbar-brand" href="#">Micua</a>
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#nav_menu">&#9776;</button>
-        <div class="collapse navbar-toggleable-xs" id="nav_menu">
-          <ul class="nav navbar-nav pull-right" role="tablist">
+        <div class="clearfix hidden-lg-up">
+          <button class="navbar-toggler pull-xs-right" type="button" data-toggle="collapse" data-target="#nav_menu">&#9776;</button>
+          <a class="navbar-brand" href="#">
+            <i class="icon icon-logo"></i>
+            <span class="sub hidden-xs-down">
+              专注前端开发<br>程序设计
+            </span>
+          </a>
+        </div>
+        <div class="collapse navbar-toggleable-md" id="nav_menu">
+          <a class="navbar-brand hidden-md-down" href="#">
+            <i class="icon icon-logo"></i>
+            <span class="sub">
+              专注前端开发<br>程序设计
+            </span>
+          </a>
+          <!-- <ul class="nav navbar-nav pull-sm-right">
+            <li class="nav-item"><a class="nav-link" href="#">登录</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">注册</a></li>
+            <li class="nav-item"><a class="btn btn-sm btn-info" href="#">订阅</a></li>
+          </ul> -->
+          <ul class="nav navbar-nav pull-md-right">
             <li class="nav-item active">
-              <a class="nav-link" href="#home">Home<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">首页 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="#">课程</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#">博客</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">关于</a>
             </li>
           </ul>
-          <form class="form-inline navbar-form">
-            <input class="form-control" type="text" placeholder="Search">
-            <button class="btn btn-info-outline" type="submit">Search</button>
+          <form class="form-inline pull-md-left" autocomplete="off">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for..." name="q">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary-outline" type="submit">Go!</button>
+              </span>
+            </div>
           </form>
         </div>
       </div>
     </nav>
   </header>
-  <main>
-    <section id="home" class="cover-section"></section>
-    <section id="about" class="cover-section"></section>
-    <section id="contact" class="cover-section"></section>
-  </main>
+  <section class="cover" style="background-image: url('images/1.jpg');">
+  </section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
   <footer>
     <div class="top">
       <div class="container">
@@ -123,6 +152,7 @@
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/bower_components/modernizr/modernizr.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js scripts/main.js -->

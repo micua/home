@@ -6,74 +6,104 @@
  * Copyright © 2015 Micua.com. All Rights Reserved.
  */
 
-$animation-duration: 0.5s;
-$animation-brand-size: 2rem;
-$animation-brand-line-height: 2.4;
-$animation-link-size: 1.2rem;
-$animation-link-line-height: 2;
-$animation-link-padding: 1.425rem;
-body[data-scrolled="false"] {
-    .navbar-sizeable {
-        opacity: 1;
-        .navbar-brand {
-            font-size: $animation-brand-size;
-            line-height: $animation-brand-line-height;
-        }
-        .navbar-nav {
-            .nav-link {
-                font-size: $animation-link-size;
-                line-height: $animation-link-line-height;
-                padding-bottom: $animation-link-padding;
-                padding-top: $animation-link-padding;
-            }
-        }
-        .navbar-form {
-            padding-bottom: $animation-link-padding;
-            padding-top: $animation-link-padding;
-        }
+.navbar-micua {
+  @extend .navbar-full;
+  @extend .navbar-fixed-top;
+  .navbar-brand {
+    margin-right: 2rem;
+    i {
+      font-size: 2.1875rem;
+      display: inline-block;
+      float: left;
+      color: $main-color;
     }
-}
-
-.navbar-sizeable {
-    opacity: 0.6;
-    .navbar-brand {
-        color: #666;
-        text-shadow: 0 0.05rem 0.05rem rgba(0, 0, 0, 0.2);
-        min-width: 6rem;
+    .sub {
+      font-size: .8rem;
+      float: left;
+      line-height: 1.125rem;
+      padding-left: .8rem;
+      border-left: 0.0625rem solid rgba($nav-fg-color, .5);
+      margin-left: .8rem;
+      color: rgba($nav-fg-color, .8);
     }
-    .navbar-nav {
+  }
+  .navbar-toggler {
+    margin-top: .1875rem;
+    margin-bottom: .1875rem;
+    border-color: #f0f0f0;
+    color: #f5f5f5;
+  }
+  .navbar-nav {
+    .nav-item {
+      & + .nav-item {
+        margin-left: 0.5rem;
+        &::before {
+          content: '/';
+          margin-right: 0.5rem;
+          color: rgba($nav-fg-color, .3);
+        }
+      }
+      .nav-link {
+        color: rgba($nav-fg-color, .9);
+        display: inline-block;
+        font-size: 1.2rem;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+      }
+      @media (max-width: 767px) {
+        float: none;
+        & + .nav-item {
+          margin-left: 0;
+          &::before {
+            display: none;
+          }
+        }
         .nav-link {
-            color: #888;
-            text-shadow: 0 0.005rem 0.005rem rgba(0, 0, 0, 0.1);
+          display: block;
         }
-        .nav-item {
-            &.active {
-                .nav-link {
-                    color: #0079ff;
-                    text-shadow: 0 0.005rem 0.005rem rgba(0, 0, 0, 0.1);
-                }
-            }
-            & + .nav-item > .nav-link:before {
-                color: #888;
-                content: '/';
-                margin-right: 1rem;
-            }
-        }
+      }
     }
-    &,
-    .navbar-brand,
-    .navbar-nav .nav-link,
-    .navbar-form {
-        transition: all $animation-duration ease;
+    .active > .nav-link,
+    .nav-link:hover {
+      color: $main-color;
     }
+  }
+  .form-inline {
+    padding-top: .1875rem;
+    padding-bottom: .1875rem;
+    .form-control {
+      background-color: transparent;
+      border-color: rgba($nav-fg-color, .4);
+      &:focus {
+        border-color: darken($main-color, 10%);
+        box-shadow: 0 0 .5rem $main-color;
+      }
+    }
+    .btn-secondary-outline {
+      border-left: 0;
+      border-color: rgba($nav-fg-color, .4);
+      &:hover,
+      &:active {
+        background-color: rgba($nav-fg-color, .1);
+      }
+    }
+  }
+  background-color: rgba($nav-bg-color, .4);
+  transition: background-color 1s ease,
+  padding .5s ease;
+  @media (min-width:543px) {
+    padding: 1.5rem 1rem;
+  }
+  @media (max-width:543px) {
+    .navbar-toggleable-md {
+      margin-top: 1rem;
+    }
+  }
 }
 
-.navbar-form {
-    .form-control {
-        width: 12rem;
-        transition: all $animation-duration ease;
-        &:focus {
-            width: 15rem;
-        }
-    }
+[data-scrolled="true"] {
+  .navbar-micua {
+    background-color: rgba($nav-bg-color, 1);
+    padding: 0.5rem 1rem;
+  }
 }

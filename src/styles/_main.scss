@@ -6,18 +6,18 @@
  * Copyright © 2015 Micua.com. All Rights Reserved.
  */
 
+.cover {
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+}
 
- // main style
- main {
-     min-height: 100%;
-     height: 300%;
-     width: 100%;
+section {
+  height: 200px;
+  background-color: #cdf5f3;
+}
 
-     & > .cover-section {
-         background-position: center;
-         background-repeat: no-repeat;
-         background-size: cover;
-         height: 33.3333333%;
-         width: 100%;
-     }
- }
+section:nth-of-type(2n) {
+  background-color: #f0b8cd;
+}

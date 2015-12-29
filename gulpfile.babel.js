@@ -2,7 +2,7 @@
  * @Author: iceStone
  * @Date:   2015-08-31 11:40:15
  * @Last Modified by:   iceStone
- * @Last Modified time: 2015-11-21 18:54:29
+ * @Last Modified time: 2015-12-28 10:46:15
  */
 'use strict';
 
@@ -65,8 +65,9 @@ gulp.task('html', ['styles'], () => {
       searchPath: ['temp', 'src', '.']
     }))
     .pipe(plugins.if('*.js', plugins.uglify()))
-    .pipe(plugins.if('*.css', plugins.minifyCss({
+    .pipe(plugins.if('*.css', plugins.cssnano({
       compatibility: '*'
+        // collapseWhitespace: true
     })))
     .pipe(gulp.dest('dist'));
 });
@@ -74,9 +75,14 @@ gulp.task('html', ['styles'], () => {
 gulp.task('reversion', ['html'], () => {
   return gulp.src('dist/*.html')
     .pipe(plugins.reversion())
-    .pipe(plugins.if('*.html', plugins.minifyHtml({
-      conditionals: true,
-      loose: true
+    .pipe(plugins.if('*.html', plugins.htmlmin({
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes: true,
+      removeComments: true,
+      removeEmptyAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
     })))
     .pipe(gulp.dest('dist'));
 });

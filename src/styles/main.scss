@@ -5,21 +5,31 @@
  * Modified : 2015-08-31 14:43:14
  * Copyright © 2015 Micua.com. All Rights Reserved.
  */
+
+
 /*==================================================*
  * import variables
  *==================================================*/
+
 @import '_variable.scss';
+
+/*==================================================*
+ * import vendor styles
+ *==================================================*/
+
+@import '_vendor.scss';
 
 /*==================================================*
  * common styles
  *==================================================*/
+
+@import '_icon.scss';
 @import '_common.scss';
-@import '_bs-ext.scss';
 
 /*==================================================*
  * import components
  *==================================================*/
+
 @import '_header.scss';
 @import '_main.scss';
 @import '_footer.scss';
-@import '_demo.scss';

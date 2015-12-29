@@ -1,0 +1,39 @@
+/*
+* @Author: iceStone
+* @Date:   2015-12-29 13:22:02
+* @Last Modified by:   iceStone
+* @Last Modified time: 2015-12-29 13:34:25
+* Copyright © 2015 Micua.com. All Rights Reserved.
+*/
+
+@font-face {
+  font-family: 'wedn';
+  src: url('#{$fonts-path}wedn.eot?ab2433');
+  src: url('#{$fonts-path}wedn.eot?ab2433#iefix') format('embedded-opentype'),
+  url('#{$fonts-path}wedn.ttf?ab2433') format('truetype'),
+  url('#{$fonts-path}wedn.woff?ab2433') format('woff'),
+  url('#{$fonts-path}wedn.svg?ab2433#wedn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'wedn' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@each $name,
+$char in $icons {
+  .icon-#{$name}::before {
+    content: $char;
+  }
+}
