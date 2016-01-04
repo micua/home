@@ -9,4 +9,7 @@
     document.body.setAttribute('data-scrolled', scroll.y > offset);
   }).trigger('optimizedScroll');
 
+
+  new WOW().init();
+
 })(window);

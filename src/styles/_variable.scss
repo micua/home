@@ -11,13 +11,18 @@
  * color
  *==================================================*/
 
-$main-color: #5bc0de;
-$nav-bg-color: #444;
-$nav-fg-color: #fff;
+$main-color: #9ff0cc;
+
+/* #5bc0de #9ff0cc */
+
+// $nav-bg-color: #fff;
+// $nav-fg-color: #666;
+$nav-bg-color: #373a3c;
+$nav-fg-color: #f0f0f0;
 
 /*==================================================*
  * icon
  *==================================================*/
 
-$fonts-path:'../fonts/';
-$icons: (logo:"\e900");
+$fonts-path: '../fonts/';
+$icons: (logo: '\e900');

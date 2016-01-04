@@ -2,7 +2,7 @@
  * @Author: iceStone
  * @Date:   2015-08-31 11:40:15
  * @Last Modified by:   iceStone
- * @Last Modified time: 2015-12-28 10:46:15
+ * @Last Modified time: 2015-12-30 22:10:58
  */
 'use strict';
 
@@ -67,7 +67,6 @@ gulp.task('html', ['styles'], () => {
     .pipe(plugins.if('*.js', plugins.uglify()))
     .pipe(plugins.if('*.css', plugins.cssnano({
       compatibility: '*'
-        // collapseWhitespace: true
     })))
     .pipe(gulp.dest('dist'));
 });
@@ -123,7 +122,7 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', del.bind(null, ['temp', 'dist']));
+gulp.task('clean', del.bind(null, ['temp', 'dist', '.publish']));
 
 gulp.task('serve', ['styles', 'fonts'], () => {
   browserSync({
@@ -141,7 +140,7 @@ gulp.task('serve', ['styles', 'fonts'], () => {
     'src/*.html',
     'src/scripts/**/*.js',
     'src/images/**/*',
-    '.tmp/fonts/**/*'
+    'temp/fonts/**/*'
   ]).on('change', reload);
 
   gulp.watch('src/styles/**/*.scss', ['styles']);

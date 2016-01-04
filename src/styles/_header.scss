@@ -66,6 +66,9 @@
     .active > .nav-link,
     .nav-link:hover {
       color: $main-color;
+      // @media (max-width: 767px) {
+      //   background-color: rgba($nav-bg-color, .6);
+      // }
     }
   }
   .form-inline {
