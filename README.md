@@ -1,10 +1,9 @@
 # Micua Home
 
 ## Install
-- npm i browser-sync del gulp gulp-autoprefixer gulp-cache gulp-eslint gulp-gh-pages gulp-if gulp-imagemin gulp-load-plugins gulp-cssnano gulp-htmlmin gulp-plumber gulp-sass gulp-size gulp-sourcemaps gulp-uglify gulp-useref main-bower-files wiredep
+- npm i babel-core babel-preset-es2015 browser-sync del gulp gulp-autoprefixer gulp-cache gulp-cssnano gulp-eslint gulp-gh-pages gulp-htmlmin gulp-if gulp-imagemin gulp-load-plugins gulp-plumber gulp-reversion gulp-sass gulp-size gulp-sourcemaps gulp-uglify gulp-useref main-bower-files wiredep --save-dev
 
 
-babel-core babel-preset-es2015 browser-sync del gulp gulp-autoprefixer gulp-cache gulp-cssnano gulp-eslint gulp-gh-pages gulp-htmlmin gulp-if gulp-imagemin gulp-load-plugins gulp-plumber gulp-reversion gulp-sass gulp-size gulp-sourcemaps gulp-uglify gulp-useref main-bower-files wiredep 
 
 
 var fs = require('fs');
@@ -75,3 +74,4 @@ var revPlugin = function revPlugin() {
 };
 
 module.exports = revPlugin;
+
