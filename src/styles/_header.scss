@@ -36,10 +36,10 @@
   .navbar-nav {
     .nav-item {
       & + .nav-item {
-        margin-left: 0.5rem;
+        margin-left: 1rem;
         &::before {
           content: '/';
-          margin-right: 0.5rem;
+          margin-right: 1rem;
           color: rgba($nav-fg-color, .3);
         }
       }

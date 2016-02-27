@@ -5,6 +5,9 @@
 
 
 
+- npm i browser-sync del gulp gulp-autoprefixer gulp-cache gulp-cssnano gulp-eslint gulp-gh-pages gulp-htmlmin gulp-if gulp-imagemin gulp-load-plugins gulp-plumber gulp-reversion gulp-sass gulp-size gulp-sourcemaps gulp-uglify gulp-useref main-bower-files wiredep --save-dev
+
+
 
 var fs = require('fs');
 var path = require('path');
