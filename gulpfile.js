@@ -8,12 +8,12 @@
 
 const gulp = require("gulp");
 const gulpLoadPlugins = require("gulp-load-plugins");
-const browserSync = require("browser-sync");
 const del = require("del");
+
+const bs = require("browser-sync").create();
 const wiredep = require("wiredep").stream;
 
 const plugins = gulpLoadPlugins();
-const reload = browserSync.reload;
 
 gulp.task('styles', () => {
   return gulp.src('src/styles/*.scss')
@@ -24,26 +24,24 @@ gulp.task('styles', () => {
       precision: 10,
       // includePaths: ['']
     }).on('error', plugins.sass.logError))
-    .pipe(plugins.autoprefixer({
-      browsers: ['last 2 version']
-    }))
-    .pipe(plugins.sourcemaps.write())
+    // .pipe(plugins.autoprefixer({
+    //   browsers: ['last 2 version']
+    // }))
+    .pipe(plugins.sourcemaps.write('.'))
     .pipe(gulp.dest('temp/styles'))
-    .pipe(reload({
-      stream: true
-    }));
+    .pipe(bs.stream({ match: "**/*.css" }));
 });
 
 function lint(files, options) {
   return () => {
     return gulp.src(files)
-      .pipe(reload({
+      .pipe(bs.reload({
         stream: true,
         once: true
       }))
       .pipe(plugins.eslint(options))
       .pipe(plugins.eslint.format())
-      .pipe(plugins.if(!browserSync.active, plugins.eslint.failAfterError()));
+      .pipe(plugins.if(!bs.active, plugins.eslint.failAfterError()));
   };
 }
 const testLintOptions = {
@@ -122,7 +120,7 @@ gulp.task('extras', () => {
 gulp.task('clean', del.bind(null, ['temp', 'dist', '.publish']));
 
 gulp.task('serve', ['styles', 'fonts'], () => {
-  browserSync({
+  bs.init({
     notify: false,
     port: 2015,
     server: {
@@ -138,7 +136,7 @@ gulp.task('serve', ['styles', 'fonts'], () => {
     'src/scripts/**/*.js',
     'src/images/**/*',
     'temp/fonts/**/*'
-  ]).on('change', reload);
+  ]).on('change', bs.reload);
 
   gulp.watch('src/styles/**/*.scss', ['styles']);
   gulp.watch('src/fonts/**/*', ['fonts']);
@@ -146,7 +144,7 @@ gulp.task('serve', ['styles', 'fonts'], () => {
 });
 
 gulp.task('serve:dist', () => {
-  browserSync({
+  bs.init({
     notify: false,
     port: 2015,
     server: {
@@ -156,7 +154,7 @@ gulp.task('serve:dist', () => {
 });
 
 gulp.task('serve:test', () => {
-  browserSync({
+  bs.init({
     notify: false,
     port: 2015,
     ui: false,
@@ -168,7 +166,7 @@ gulp.task('serve:test', () => {
     }
   });
 
-  gulp.watch('test/spec/**/*.js').on('change', reload);
+  gulp.watch('test/spec/**/*.js').on('change', bs.reload);
   gulp.watch('test/spec/**/*.js', ['lint:test']);
 });
 

@@ -6,30 +6,30 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "watch": "browser-sync start --server --no-notify --files='*.html, scripts/*.js, styles/*.css'"
+    "watch": "browser-sync start --server --no-notify --files=\"*.html, scripts/*.js, styles/*.css\""
   },
   "devDependencies": {
-    "browser-sync": "^2.11.1",
+    "browser-sync": "^2.12.3",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-cache": "^0.4.2",
-    "gulp-cssnano": "^2.1.1",
+    "gulp-cache": "^0.4.4",
+    "gulp-cssnano": "^2.1.2",
     "gulp-eslint": "^2.0.0",
     "gulp-gh-pages": "^0.5.4",
     "gulp-htmlmin": "^1.3.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
-    "gulp-load-plugins": "^1.2.0",
+    "gulp-load-plugins": "^1.2.2",
     "gulp-plumber": "^1.1.0",
     "gulp-reversion": "^1.0.1",
-    "gulp-sass": "^2.2.0",
-    "gulp-size": "^2.0.0",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-uglify": "^1.5.3",
-    "gulp-useref": "^3.0.7",
+    "gulp-useref": "^3.0.8",
     "main-bower-files": "^2.11.1",
-    "wiredep": "^3.0.0"
+    "wiredep": "^4.0.0"
   },
   "eslintConfig": {
     "env": {
